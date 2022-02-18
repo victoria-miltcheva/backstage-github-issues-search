@@ -7,6 +7,7 @@ import {
   CATALOG_FILTER_EXISTS,
 } from '@backstage/plugin-catalog-react';
 import { DocsResultListItem } from '@backstage/plugin-techdocs';
+import { GitHubIssueResultListItem } from '../gitHubIssue/';
 
 import {
   SearchBar,
@@ -20,6 +21,7 @@ import {
   CatalogIcon,
   Content,
   DocsIcon,
+  GitHubIcon,
   Header,
   Page,
 } from '@backstage/core-components';
@@ -69,6 +71,11 @@ const SearchPage = () => {
                   value: 'techdocs',
                   name: 'Documentation',
                   icon: <DocsIcon />,
+                },
+                {
+                  value: 'github-issue',
+                  name: 'GitHub Issues',
+                  icon: <GitHubIcon />,
                 },
               ]}
             />
@@ -124,6 +131,13 @@ const SearchPage = () => {
                       case 'techdocs':
                         return (
                           <DocsResultListItem
+                            key={document.location}
+                            result={document}
+                          />
+                        );
+                      case 'github-issue':
+                        return (
+                          <GitHubIssueResultListItem
                             key={document.location}
                             result={document}
                           />

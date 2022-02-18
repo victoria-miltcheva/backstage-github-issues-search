@@ -7,6 +7,7 @@ import {
 import { PluginEnvironment } from '../types';
 import { DefaultCatalogCollator } from '@backstage/plugin-catalog-backend';
 import { DefaultTechDocsCollator } from '@backstage/plugin-techdocs-backend';
+import { DefaultGitHubIssuesCollator } from './gitHubIssue/search/DefaultGitHubIssuesCollator';
 
 export default async function createPlugin({
   logger,
@@ -37,6 +38,12 @@ export default async function createPlugin({
       logger,
       tokenManager,
     }),
+  });
+
+   // GitHub issues collator
+   indexBuilder.addCollator({
+    defaultRefreshIntervalSeconds: 600,
+    collator: DefaultGitHubIssuesCollator.fromConfig(config),
   });
 
   // The scheduler controls when documents are gathered from collators and sent
