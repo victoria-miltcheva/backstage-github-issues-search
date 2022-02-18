@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { Config } from '@backstage/config';
 import { IndexableDocument, DocumentCollator } from '@backstage/search-common';
 import GitHubService from '../services/GitHubService';
