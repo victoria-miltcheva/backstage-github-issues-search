@@ -43,7 +43,7 @@ export class DefaultGitHubIssuesCollator implements DocumentCollator {
   }
 
   async execute(): Promise<GitHubIssueDocument[]> {
-    const result = await this.gitHubService.getOpenIssues(
+    const result = await this.gitHubService.getIssues(
       gitHubRepositoryName,
       gitHubRepositoryOwner,
     );

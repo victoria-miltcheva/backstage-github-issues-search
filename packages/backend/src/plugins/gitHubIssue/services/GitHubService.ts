@@ -22,7 +22,7 @@ class GitHubService {
   // Note: https://github.com/octokit/graphql.js/ does not offer built-in pagination yet, https://github.com/octokit/octokit.js does
   // Also, the Backstage.io catalog-backend has a custom helper function for this:
   // https://github.com/backstage/backstage/blob/618d78495cf6cdf8928365a20b97435c5a65074d/plugins/catalog-backend/src/ingestion/processors/github/github.ts#L337
-  async getOpenIssues(
+  async getIssues(
     repositoryName: string,
     repositoryOwner: string,
     last = 100,
