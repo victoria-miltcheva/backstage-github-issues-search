@@ -7,7 +7,7 @@ import { Repository, IssueConnection } from '@octokit/graphql-schema';
 
 class GitHubService {
   private token: string;
-  graphqlWithAuth: typeof graphql;
+  private graphqlWithAuth: typeof graphql;
 
   constructor(token: string) {
     this.token = token;

@@ -28,8 +28,7 @@ export interface GitHubIssueDocument extends IndexableDocument {
 
 export class DefaultGitHubIssuesCollator implements DocumentCollator {
   public readonly type = 'github-issue';
-  gitHubService: GitHubService;
-  collator: any;
+  private gitHubService: GitHubService;
 
   constructor(token: string) {
     this.gitHubService = new GitHubService(token);
